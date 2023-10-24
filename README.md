@@ -14,8 +14,8 @@ This repository aims to illuminate the path for your Docker journey.
 >	    - An example needs to be extended or included.
 > 2. You can create Pull Requests to amend the documentation, examples. Contributions are always welcome.  	
 
-
-🐳 **Docker Basics: Laying the Groundwork for Containerization Mastery**
+------------------------------------------------------
+### 🐳 **Docker Basics: Laying the Groundwork for Containerization Mastery**
 
 Docker has revolutionized the software industry by providing a standard way to package applications and their dependencies into a single object called a container. These lightweight, portable, and self-sufficient containers can run easily and consistently on any machine that has Docker installed, eliminating the "it works on my machine" headache.
 

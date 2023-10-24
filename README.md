@@ -8,12 +8,11 @@ Docker, is not just about containerization; it's about creating an environment w
 
 This repository aims to illuminate the path for your Docker journey. 
 
->[Information]
->**A Couple of Things to Note**
->1. At any time, you are free to create an Issue, when you require one of the following 
->	- A better explanation on a topic that is related to docker.
->	- An example needs to be extended or included.
->2. You can create Pull Requests to amend the documentation, examples. Contributions are always welcome.  	
+> [!NOTE]
+> 1. At any time, you are free to create an Issue, when you require one of the following 
+>	    - A better explanation on a topic that is related to docker.
+>	    - An example needs to be extended or included.
+> 2. You can create Pull Requests to amend the documentation, examples. Contributions are always welcome.  	
 
 
 🐳 **Docker Basics: Laying the Groundwork for Containerization Mastery**

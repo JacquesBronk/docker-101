@@ -28,7 +28,10 @@ COPY src/ .
  
 ```dockerignore
 # Sample .dockerignore 
-.git .vscode logs/ temp/
+.git
+.vscode
+logs/
+temp/
 ```
 3. **Avoid Cache Busting with ADD/COPY**: If you use `COPY` or `ADD` instructions for local files, the cache will bust as soon as those files change. However, if you're sure the changes don’t affect the build, you can use a trick: before the primary `COPY`, add a `COPY` for just the files that influence the build (like dependency manifests) and then perform the necessary installations.
 
@@ -43,12 +46,11 @@ COPY . .
 
 4. **Use Build Args for Dynamic Commands**: If you have dynamic elements in commands (like timestamps or git hashes), they can bust the cache. Instead, use build arguments and set them to different values only when necessary.
 
-   ```Dockerfile
+```Dockerfile
 ARG BUILD_VERSION=unknown 
 LABEL BuildVersion=$BUILD_VERSION
 ```
-
-   Then, only provide the `--build-arg` when you want to update the version:
+Then, only provide the `--build-arg` when you want to update the version:
  ```Dockerfile
 docker build --build-arg BUILD_VERSION=1.0.1 .
 ```

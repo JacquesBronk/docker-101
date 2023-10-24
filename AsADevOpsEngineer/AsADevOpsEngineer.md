@@ -1,6 +1,6 @@
 # Advanced Docker Techniques for DevOps Engineers
 
-Hey there, fellow DevOps Engineers! When it comes to integrating Docker into our pipelines, we're talking about a game changer. But as you know, the path to mastering any technology is through understanding its ins and outs, best practices, and, of course, learning from common pitfalls. So, let's deep dive into making our lives easier with Docker!
+When it comes to integrating Docker into our pipelines, we're talking about a game changer. But as you know, the path to mastering any technology is through understanding its ins and outs, best practices, and, of course, learning from common pitfalls. So, let's deep dive into making our lives easier with Docker!
 
 ## Common Curiosities
 
@@ -15,12 +15,10 @@ But, Docker isn't a one-size-fits-all solution. It needs the right environment a
 Navigating the world of Docker is much smoother when you've got a trusty map of best practices:
 
 1. **Keep Images Lean:**
-    
     - Start with smaller base images (think `alpine`). They're not only efficient concerning space, but they also reduce the attack surface for vulnerabilities.
     - Implement multi-stage builds. This approach is like having an assembly line where you pass forward only what you need, leaving unnecessary components (and vulnerabilities) behind.
-2. **Effective Caching:**
-    
-    - Leverage build cache smartly. It can significantly speed up your build process. By structuring Dockerfiles correctly, subsequent builds are faster, as they reuse the cached data.
+2. **Effective [Caching](./../DockerEngine/DockerCache.md):**
+    - Leverage build-cache smartly. It can significantly speed up your build process. By structuring Dockerfiles correctly, subsequent builds are faster, as they reuse the cached data.
     - The `.dockerignore` file is your buddy. It ensures that your build context is clutter-free by excluding files and directories that are not needed for building the image.
 3. **Security First:**
     

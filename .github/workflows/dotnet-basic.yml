@@ -23,7 +23,7 @@ jobs:
       working-directory: Examples/BasicDotnet/MyAwesomeMicroservice
 
     - name: Publish
-      run: publish MyAwesomeMicroservice/MyAwesomeMicroservice.csproj --configuration Release --output ./../build/publish/ /p:Version=${{github.run_number}}
+      run: dotnet publish MyAwesomeMicroservice/MyAwesomeMicroservice.csproj --configuration Release --output ./../build/publish/ /p:Version=${{github.run_number}}
       working-directory: Examples/BasicDotnet/MyAwesomeMicroservice
 
     - name: Build image

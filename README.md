@@ -1,4 +1,4 @@
-[![Test Example, with Test containers](https://github.com/JacquesBronk/docker-101/actions/workflows/test-example.yml/badge.svg)](https://github.com/JacquesBronk/docker-101/actions/workflows/test-example.yml)
+[![Test Example, with Test containers](https://github.com/JacquesBronk/docker-101/actions/workflows/test-example.yml/badge.svg)](https://github.com/JacquesBronk/docker-101/actions/workflows/test-example.yml)  [![dotnet Basic](https://github.com/JacquesBronk/docker-101/actions/workflows/dotnet-basic.yml/badge.svg)](https://github.com/JacquesBronk/docker-101/actions/workflows/dotnet-basic.yml)
 
 🐳 **Embarking on the Docker Journey: Empowering Your Infrastructure**
 

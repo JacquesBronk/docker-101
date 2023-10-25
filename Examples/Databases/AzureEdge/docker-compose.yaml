@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  azuresqledge:
+    image: mcr.microsoft.com/azure-sql-edge
+    container_name: azuresqledge
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: <YourPassword> # Please change <YourPassword> to your actual password.
+      MSSQL_PID: 'Developer' # Choose the correct SQL SKU for your needs.
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqledgevolume:/var/opt/mssql # Persisting data to a volume
+    networks:
+      - sqledgenet
+
+volumes:
+  sqledgevolume: # Defines the volume to be used for persisting data.
+
+networks:
+  sqledgenet: # Defines the network to be used by the service.

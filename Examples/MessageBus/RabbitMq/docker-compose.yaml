@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: always
+    environment:
+      RABBITMQ_DEFAULT_USER: user  # Define the username
+      RABBITMQ_DEFAULT_PASS: password  # Define the password, and make sure to use a secure one
+    ports:
+      - "15672:15672"  # Port for the RabbitMQ Management interface
+      - "5672:5672"  # Default port for RabbitMQ
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq  # Persist data to a volume
+
+volumes:
+  rabbitmq_data:

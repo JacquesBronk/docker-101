@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  fetcher:
+    image: busybox
+    command: sh -c "sleep 60 && echo 'fetching data...' && sleep 30"
+    networks:
+      - processing-net
+    depends_on:
+      - processor
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+
+  processor:
+    image: busybox
+    command: sh -c "echo 'waiting for data...' && sleep 90 && echo 'processing data...'"
+    volumes:
+      - type: volume
+        source: data-store
+        target: /data
+    networks:
+      - processing-net
+      - storage-net
+    deploy:
+      restart_policy:
+        condition: on-failure
+    healthcheck:
+      test: ["CMD", "ls", "/data"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  storage:
+    image: busybox
+    command: sh -c "echo 'storing data...' && echo 'data at $(date)' > /var/lib/storage-point/data.txt"
+    volumes:
+      - type: volume
+        source: data-store
+        target: /var/lib/storage-point
+    networks:
+      - storage-net
+    deploy:
+      placement:
+        constraints:
+          - node.labels.storage == local
+
+  logging:
+    image: busybox
+    volumes:
+      - type: bind
+        source: ./logs
+        target: /var/log
+    command: sh -c "echo 'Initiating logging...' && tail -f /var/log/*.log"
+    deploy:
+      mode: global
+
+networks:
+  processing-net:
+    driver: overlay
+    attachable: true
+  storage-net:
+    driver: overlay
+    attachable: true
+
+volumes:
+  data-store:
+    driver: local
+

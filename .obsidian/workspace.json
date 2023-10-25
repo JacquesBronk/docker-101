@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "da42511ba21b1793",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AsASolutionsArchitect/AsASolutionsArchitect.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "AsASolutionsArchitect/AsASolutionsArchitect.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "AsASolutionsArchitect/AsASolutionsArchitect.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "AsASolutionsArchitect/AsASolutionsArchitect.md"
               }
             }
           }
@@ -146,23 +159,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b12a2c063d04dd5f",
+  "active": "da42511ba21b1793",
   "lastOpenFiles": [
+    "Examples/Compose/logs",
+    "Examples/Compose/docker-compose.yaml",
+    "Examples/Compose/New Text Document.txt",
+    "Examples/MessageBus/Kafka/docker-compose.yaml",
+    "Examples/MessageBus/Kafka/New Text Document.txt",
+    "Examples/MessageBus/RabbitMq/docker-compose.yaml",
+    "Examples/MessageBus/RabbitMq/New Text Document.txt",
+    "Examples/Databases/SqlServer/docker-compose.yaml",
+    "Examples/Databases/SqlServer/New Text Document.txt",
+    "Examples/Databases/SqlServer/Run.md",
+    "Examples/Databases/Redis/Run.md",
+    "Examples/Databases/Redis/Run.md.txt",
+    "Examples/Databases/Redis/New Text Document.txt",
+    "Examples/Databases/Postgres/Run.md",
+    "Examples/Databases/Postgress/Run.md",
+    "Examples/Databases/MySql/Run.md",
+    "Examples/Databases/AzureEdge/Run.md",
+    "CommandCheatSheet.md",
+    "Untitled.md",
+    "README.md",
     "AsADevOpsEngineer/AsADevOpsEngineer.md",
     "AsADeveloper/AsADeveloper.md",
     "DockerEngine/DockerCache.md",
-    "README.md",
     "AsATester/AsATester.md",
     "AsAProductOwner/AsAProductOwner.md",
     "AsASolutionsArchitect/AsASolutionsArchitect.md",
-    "AsASolutionArchitect/AsASolutionArchitect.md",
-    "AsASolutionArchitect",
-    "DockerEngine",
-    "AsAProductOwner",
-    "AsASolutionsArchitect",
-    "AsADevOpsEngineer",
-    "AsATester",
-    "AsADeveloper",
-    "assets"
+    "AsASolutionArchitect/AsASolutionArchitect.md"
   ]
 }

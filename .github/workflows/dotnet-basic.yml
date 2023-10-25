@@ -1,0 +1,36 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: dotnet Basic
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore TestAutomationExamples.sln
+      working-directory: Examples/BasicDotnet/MyAwesomeMicroservice/MyAwesomeMicroservice.sln
+
+    - name: Publish
+      run: publish MyAwesomeMicroservice/MyAwesomeMicroservice.csproj --configuration Release --output ./../build/publish/ /p:Version=${{github.run_number}}
+      working-directory: Examples/BasicDotnet/MyAwesomeMicroservice
+
+    - name: Build image
+      run: |
+        docker build -t test-image:latest .
+      working-directory: Examples/BasicDotnet/build
+
+    - name: Container Image Artifact Upload
+      uses: ishworkh/container-image-artifact-upload@v1.0.0
+      with:
+        image: test-image:latest   

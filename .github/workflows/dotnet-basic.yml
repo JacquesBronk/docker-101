@@ -17,9 +17,10 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+
     - name: Restore dependencies
-      run: dotnet restore TestAutomationExamples.sln
-      working-directory: Examples/BasicDotnet/MyAwesomeMicroservice/MyAwesomeMicroservice.sln
+      run: dotnet restore MyAwesomeMicroservice.sln
+      working-directory: Examples/BasicDotnet/MyAwesomeMicroservice
 
     - name: Publish
       run: publish MyAwesomeMicroservice/MyAwesomeMicroservice.csproj --configuration Release --output ./../build/publish/ /p:Version=${{github.run_number}}

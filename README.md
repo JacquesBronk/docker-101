@@ -1,3 +1,5 @@
+[![Test Example, with Test containers](https://github.com/JacquesBronk/docker-101/actions/workflows/test-example.yml/badge.svg)](https://github.com/JacquesBronk/docker-101/actions/workflows/test-example.yml)
+
 🐳 **Embarking on the Docker Journey: Empowering Your Infrastructure**
 
 Stepping into the world of Docker might seem daunting at first, but embracing this powerful tool is essential for leveraging the comprehensive ecosystem offered by the [Cloud Native Computing Foundation (CNCF)](https://landscape.cncf.io/). In our technological era, aligning with the methodologies and tools that underpin major [Big Tech](https://en.wikipedia.org/wiki/Big_Tech) infrastructures can significantly elevate the efficiency, scalability, and robustness of your projects.

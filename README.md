@@ -139,3 +139,54 @@ docker-compose up
 **[As a Product Owner](./AsAProductOwner/AsAProductOwner.md):** You need basic knowledge of Docker’s business value, how it affects the delivery pipeline, and understanding timelines and requirements for Docker environments.
 
 **[As a Tester](./AsATester/AsATester.md):** You should understand how to set up isolated testing environments with Docker, integrate Docker with testing frameworks, and the concept of infrastructure as code.
+
+### How to setup on Windows, with WSL
+**Step 1: Install Windows Subsystem for Linux (WSL)**
+
+1. Open PowerShell as Administrator and run the following command to enable WSL:
+```powershell    
+wsl --install
+```
+This command will enable the required optional features for WSL and then download and install your Linux distribution of choice (The default is Ubuntu).
+2. After the installation is complete, you must restart your computer.
+**Step 2: Update to WSL 2**
+1. Make sure your Windows 11 version is updated and supports WSL 2.
+2. Open PowerShell as Administrator and run:
+```powershell
+wsl --set-default-version 2
+``` 
+3. If you already installed a Linux distribution, make sure it's using WSL 2 by running:
+``` powershell    
+wsl --set-version <distribution name> 2
+```
+Replace `<distribution name>` with the name of your installed distribution (e.g., Ubuntu).
+
+**Step 3: Install Docker Desktop**
+1. Download the installer for Docker Desktop from the [official Docker website](https://www.docker.com/products/docker-desktop).
+2. Run the installer and follow the installation process.
+3. In the configuration, ensure the "Use the WSL 2 based engine" option is selected to enable integration with WSL 2.
+![Docker Settings](https://github.com/JacquesBronk/docker-101/assets/100966232/6f598ab7-b26d-4ad2-88d1-e7bc8f93e530)
+4. After installation, Docker Desktop may prompt you to log out and log back in or restart your computer to ensure the changes take effect.
+
+**Step 4: Configure Docker Desktop WSL Integration**
+1. Open Docker Desktop.
+2. Navigate to Settings (or Preferences, depending on your version).
+3. Go to the "Resources" section, and then to "WSL Integration."
+4. Ensure that the "Enable integration with my default WSL distro" option is checked. Also, if you have multiple WSL distros, you can choose which ones you'd like to enable Docker integration for.
+5. Apply and restart Docker Desktop if needed.
+
+**Step 5: Verify the Installation**
+
+1. Open your WSL terminal (you can simply use the Windows Terminal or any other terminal you prefer).
+2. Run:
+```bash
+docker run hello-world
+```
+This command downloads a test image and runs it in a container. It will confirm that Docker is installed correctly and can create containers.
+
+**Step 6: Use Docker with WSL**
+
+Now, you can use Docker commands right within your WSL terminal. The Docker CLI in your Linux distro interacts with the Docker Desktop application, and you can start, manage, and remove containers just as you would in a native Linux environment.
+
+Keep in mind the setup might have slight variations based on the updates in Docker Desktop or WSL, considering the ongoing developments in both platforms. Always refer to the official documentation for the most accurate, up-to-date information.
+
